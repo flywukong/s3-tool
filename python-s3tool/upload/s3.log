@@ -1,0 +1,67 @@
+[2018-11-01 10:33:36,209][thread-upload-new.py][93][ERROR] Traceback (most recent call last):
+  File "thread-upload-new.py", line 89, in <module>
+    transfer.upload_file('/home/wuchen/python.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 283, in upload_file
+    filename, '/'.join([bucket, key]), e))
+S3UploadFailedError: Failed to upload /home/wuchen/python.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+
+[2018-11-01 10:33:49,112][thread-upload-new.py][93][ERROR] Traceback (most recent call last):
+  File "thread-upload-new.py", line 89, in <module>
+    transfer.upload_file('/home/wuchen/python.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 283, in upload_file
+    filename, '/'.join([bucket, key]), e))
+S3UploadFailedError: Failed to upload /home/wuchen/python.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+
+[2018-11-01 10:33:49,113][thread-upload-new.py][94][ERROR] Failed to upload /home/wuchen/python.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+[2018-11-01 10:41:01,374][thread-upload-new.py][96][ERROR] Traceback (most recent call last):
+  File "thread-upload-new.py", line 92, in <module>
+    transfer.upload_file('/home/wuchen/python.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 283, in upload_file
+    filename, '/'.join([bucket, key]), e))
+S3UploadFailedError: Failed to upload /home/wuchen/python.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+
+[2018-11-01 10:41:01,375][thread-upload-new.py][97][ERROR] Failed to upload /home/wuchen/python.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+[2018-11-01 10:47:03,844][thread-upload-new.py][99][ERROR] Traceback (most recent call last):
+  File "thread-upload-new.py", line 95, in <module>
+    transfer.upload_file('/home/wuchen/python.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 283, in upload_file
+    filename, '/'.join([bucket, key]), e))
+S3UploadFailedError: Failed to upload /home/wuchen/python.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+
+[2018-11-01 10:47:03,845][thread-upload-new.py][100][ERROR] Failed to upload /home/wuchen/python.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+[2018-11-01 10:52:43,389][test.py][84][ERROR] Traceback (most recent call last):
+  File "test.py", line 80, in <module>
+    transfer.upload_file('/home/wuchen/filebeat.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 283, in upload_file
+    filename, '/'.join([bucket, key]), e))
+S3UploadFailedError: Failed to upload /home/wuchen/filebeat.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+
+[2018-11-01 10:52:43,390][test.py][85][ERROR] Failed to upload /home/wuchen/filebeat.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+[2018-11-01 10:58:46,830][test.py][84][ERROR] Traceback (most recent call last):
+  File "test.py", line 80, in <module>
+    transfer.upload_file('/home/wuchen/filebeat.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 283, in upload_file
+    filename, '/'.join([bucket, key]), e))
+S3UploadFailedError: Failed to upload /home/wuchen/filebeat.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+
+[2018-11-01 10:58:46,831][test.py][85][ERROR] Failed to upload /home/wuchen/filebeat.tar.gz to test1235/test333: An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Unknown
+[2018-11-01 11:04:09,453][test.py][83][ERROR] Traceback (most recent call last):
+  File "test.py", line 79, in <module>
+    transfer.upload_file('/home/wuchen/filebeat.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 275, in upload_file
+    future.result()
+  File "/usr/lib/python2.7/site-packages/s3transfer/futures.py", line 73, in result
+    return self._coordinator.result()
+  File "/usr/lib/python2.7/site-packages/s3transfer/futures.py", line 233, in result
+    raise self._exception
+UnknownSignatureVersionError: Unknown Signature Version: s3v2.
+
+[2018-11-01 11:04:09,454][test.py][84][ERROR] Unknown Signature Version: s3v2.
+[2018-11-01 11:04:45,680][test.py][83][ERROR] Traceback (most recent call last):
+  File "test.py", line 79, in <module>
+    transfer.upload_file('/home/wuchen/filebeat.tar.gz', "test1235", "test333")
+  File "/usr/lib/python2.7/site-packages/boto3/s3/transfer.py", line 283, in upload_file
+    filename, '/'.join([bucket, key]), e))
+S3UploadFailedError: Failed to upload /home/wuchen/filebeat.tar.gz to test1235/test333: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Unknown
+
+[2018-11-01 11:04:45,681][test.py][84][ERROR] Failed to upload /home/wuchen/filebeat.tar.gz to test1235/test333: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Unknown

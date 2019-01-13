@@ -1,0 +1,55 @@
+[33mcommit e9d004c4b4f11010319d7da61af34e1425ae9d76[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mdsd/master[m[33m)[m
+Merge: 6dd4834 b73fa35
+Author: flywukong <chen1990@ustc.mail.edu.cn>
+Date:   Thu Feb 1 12:10:23 2018 +0800
+
+    Merge branch 'master' of https://github.com/flywukong/RGWs3API
+
+[33mcommit 6dd48340aece6211adf8e398c10871c8cb8508bc[m
+Author: flywukong <chen1990@mail.ustc.edu.cn>
+Date:   Thu Feb 1 11:40:20 2018 +0800
+
+    test
+
+[33mcommit 929f912e6f6aa1b98fc79f44facbcb39023e333b[m
+Author: flywukong <chen1990@mail.ustc.edu.cn>
+Date:   Wed Jan 31 17:27:56 2018 +0800
+
+    s3 High API
+
+[33mcommit b73fa350f81519a561a9d3ae0473cdbd09d051c9[m[33m ([m[1;31morign/master[m[33m)[m
+Merge: c798a65 37ed114
+Author: flywukong <chen1990@ustc.mail.edu.cn>
+Date:   Wed Jan 24 15:45:23 2018 +0800
+
+    Merge branch 'master' of https://github.com/flywukong/RGWs3API
+
+[33mcommit c798a65835505ea86b93380b5954090da4027a71[m
+Author: flywukong <chen1990@ustc.mail.edu.cn>
+Date:   Wed Jan 24 15:38:47 2018 +0800
+
+    first3 commit
+
+[33mcommit 37ed1148c12bc3f01580b2bd3da8e193dc1599d5[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: wuchen <wuchen@iflytek.com>
+Date:   Wed Jan 24 15:27:42 2018 +0800
+
+    version2 fix
+
+[33mcommit a16c85144786fe417d0dfb840e4c2a0fbec52a43[m
+Author: wuchen <wuchen@iflytek.com>
+Date:   Wed Jan 24 15:25:57 2018 +0800
+
+    version2
+
+[33mcommit 6e505a109aef4208ab1f681a09122600ca063647[m[33m ([m[1;31mversion1/master[m[33m)[m
+Author: wuchen <wuchen@iflytek.com>
+Date:   Tue Jan 23 11:52:01 2018 +0800
+
+    version 1.1
+
+[33mcommit 064e466c926d0034c19e9976624067fa03c7fcbf[m
+Author: flywukong <chen1990@ustc.mail.edu.cn>
+Date:   Tue Jan 23 11:14:35 2018 +0800
+
+    first commit
