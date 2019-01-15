@@ -9,7 +9,21 @@ import Logger
 from boto3.s3.transfer import TransferConfig, S3Transfer
 import boto3
 from boto3.session import Session
+import time
 
+LOG = Logger.getLogger("s3.log")
+
+def timer(func):
+
+    def decor(*args,**kwargs):
+
+        start_time = time.time();
+        func(*args);
+        end_time = time.time();
+        d_time = end_time - start_time
+        print "upload file  use {} seconds".format(d_time)
+
+    return decor;
 
 class ProgressPercentage2(object):
     def __init__(self,client,bucket,filename):
@@ -46,7 +60,7 @@ class ProgressPercentage(object):
                     self._filename, self._seen_so_far, self._size, percentage))
             sys.stdout.flush()
 
-
+@timer
 def upload_file(s3_client,bucketname,keyname,filepath):
 
     try:

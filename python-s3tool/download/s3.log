@@ -1,0 +1,13 @@
+[2019-01-15 10:26:16,509][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:44:55,527][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:45:48,700][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:47:20,430][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:47:24,483][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:50:20,629][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:53:33,811][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:57:05,793][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:57:12,707][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 10:57:23,985][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 11:00:11,277][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 11:01:21,000][thread-download.py][72][ERROR] Error downloading: An error occurred (404) when calling the HeadObject operation: Not Found
+[2019-01-15 11:08:01,015][thread-download.py][72][ERROR] Error downloading: [Errno 2] No such file or directory: '/home/wuchen/test1/python-s3tool/download//README.md/README.md.E6DBB90C'

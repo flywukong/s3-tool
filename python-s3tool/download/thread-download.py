@@ -1,7 +1,6 @@
 # This program is  a test of S3 multpart upload API
 #*-*coding:utf-8 *-*  
 import sys
-import os
 import traceback
 import argparse
 import threading
@@ -9,6 +8,17 @@ import Logger
 from boto3.s3.transfer import TransferConfig, S3Transfer
 import boto3
 from boto3.session import Session
+import time 
+
+def timer(func):
+
+    def decor(*args,**kwargs):
+
+        start_time = time.time();
+        func(*args);
+        end_time = time.time();
+        d_time = end_time - start_time
+        print "download file  use {} seconds".format(d_time)
 
 
 class ProgressPercentage2(object):
@@ -29,28 +39,13 @@ class ProgressPercentage2(object):
                 "\r%s %s / %s (%.2f%%)" % (
                     self._filename, self._seen_so_far, self._size, percentage))
 
+#            sys.stdout.write('{} is the file name. {} out of {} done. The percentage completed is {} %'.format(str(self._filename), str(self._seen_so_far), str(self._size),str(percentage)))
             sys.stdout.flush()
 
-class ProgressPercentage(object):
-    def __init__(self, filename):
-        self._filename = filename
-        self._size = float(os.path.getsize(filename))
-        self._seen_so_far = 0 
-        self._lock = threading.Lock()
-    def __call__(self, bytes_amount):
-        with self._lock:
-            self._seen_so_far += bytes_amount
-            percentage = (self._seen_so_far / self._size) * 100
-            sys.stdout.write(
-                "\r%s %s / %s (%.2f%%)" % (
-                    self._filename, self._seen_so_far, self._size, percentage))
-            sys.stdout.flush()
-
-
-def upload_file(s3_client,bucketname,keyname,filepath):
+def download_file(s3_client,bucketname,keyname,filepath):
 
     try:
-        print "uploading file:", filepath
+        print "Downloading file:", filepath
         down_config = TransferConfig(
     		multipart_threshold= 32 * 1024 * 1024,
 		max_concurrency=20,
@@ -60,12 +55,14 @@ def upload_file(s3_client,bucketname,keyname,filepath):
 	)
         t = S3Transfer( client=s3_client,config=down_config )
                            
-        progress = ProgressPercentage(filepath)
+        progress = ProgressPercentage2(s3_client,bucketname,keyname)
        # progress = ProgressPercentage(filepath)
-        t.upload_file( filepath,bucketname, keyname, callback=progress )
+        t.download_file( bucketname, keyname, filepath, callback=progress )
 
     except Exception as e:
-        print "Error uploading: %s" % ( e )
+        print "Error downloading: %s" % ( e )
+
+
 
 if __name__ == '__main__':
 
@@ -74,7 +71,7 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--access-key', help='S3 access key', required=True)
     parser.add_argument('-s', '--secret-key', help='S3 secret key', required=True)
     parser.add_argument('-b', '--bucket',help ='bucket name',required=True)
-    parser.add_argument('-o', '--key',help ='object name',required=False)
+    parser.add_argument('-o', '--key',help ='object name',required=True)
     parser.add_argument('-f', '--filepath',help ='down load filepath',required=True)
 
     args = parser.parse_args()
@@ -83,18 +80,12 @@ if __name__ == '__main__':
     session = Session(args.access_key,args.secret_key)
     s3_client = session.client('s3', endpoint_url=url)
 
-    filepath = args.filepath
-
-    keyname  = args.filepath.split("/")[-1]
-    
-    if args.key:
-        s3_path = args.key+"/"+keyname
-    else:
-        s3_path = keyname 
+    filepath = args.filepath+"/"+args.key
+    keyname = args.key
 
     bucketname = args.bucket
 
-    upload_file(s3_client,bucketname,s3_path,filepath)
+    download_file(s3_client,bucketname,keyname,filepath)
       
 
 

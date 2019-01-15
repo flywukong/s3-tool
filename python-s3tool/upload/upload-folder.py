@@ -17,6 +17,18 @@ import boto3
 from boto3.session import Session
 
 
+
+def timer(func):
+    def decor(*args,**kwargs):
+
+        start_time = time.time();
+        func(*args);
+        end_time = time.time();
+        d_time = end_time - start_time
+        print "upload dir  use {} seconds".format(d_time)
+
+    return decor;
+
 class ProgressPercentage(object):
     def __init__(self, filename):
         self._filename = filename
@@ -54,7 +66,7 @@ def thread_upload_file( s3client, filename, bucketname, keyname):
 
 # get an access token, local (from) directory, and S3 (to) directory
 # from the command-line
-
+@timer
 def upload_dir(client,bucket,local_directory,destination):
 
 

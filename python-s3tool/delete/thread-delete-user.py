@@ -86,14 +86,14 @@ if __name__ == '__main__':
     except ClientError as e:
         LOG.error("list bucket  error {0}".format(e.response['Error']['Code']))
 
+    threads = []
 
     for bucketname in bucket_list:
 
-       threads = []
-       t=threading.Thread(target = del_bucket,args=(s3,s3_client,bucketname,))
-       threads.append(t)
-       for thr in threads:
-           thr.start()
-       for thr in threads:
-           if thr.isAlive():
-               thr.join()
+        t=threading.Thread(target = del_bucket,args=(s3,s3_client,bucketname,))
+        threads.append(t)
+    for thr in threads:
+	    thr.start()
+    for thr in threads:
+        if thr.isAlive():
+           thr.join()

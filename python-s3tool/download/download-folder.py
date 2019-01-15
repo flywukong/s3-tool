@@ -11,6 +11,8 @@ import sys
 
 
 LOG = Logger.getLogger("s3.log")
+
+
 class ProgressPercentage(object):
     def __init__(self,client,bucket,filename):
         self._filename = filename
